@@ -61,7 +61,10 @@
     </div>
     <script>
         function sendHeart() {
-            alert("마음을 전해봅니다." + navigator.userAgent );
+		var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+		if (isMobile) {
+			alert("마음을 전해봅니다." + navigator.userAgent );
+		}
         }
     </script>
 </body>
