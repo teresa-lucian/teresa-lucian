@@ -63,10 +63,14 @@
     <script>
         function sendHeart() {
 		var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+                var isKakaoTalk = /KAKAOTALK/i.test(navigator.userAgent);
 		if (!isMobile) {
 			alert("마음은 모바일에서 전해주세요.");
-		}else {
-                      location.href="https://kakaopay.kakao.com/redirect/money/to/bank?bank_name=NH&bank_account_number=3561212175653" 
+		}else if (isKakaoTalk){
+                      location.href="kakaotalk://kakaopay/money/to/bank?bank_name=NH&bank_account_number=3561212175653";
+                }
+                else {
+                      location.href="https://kakaopay.kakao.com/redirect/money/to/bank?bank_name=NH&bank_account_number=3561212175653";
                 }
         }
     </script>
